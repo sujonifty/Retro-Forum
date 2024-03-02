@@ -39,8 +39,8 @@
     </style>
 </head>
 
-<body class="container w-4/5 mx-auto inter">
-    <header>
+<body class="container inter">
+    <header class="w-4/5 mx-auto">
         <!-- navbar section  -->
         <nav>
             <div class="navbar bg-base-100">
@@ -135,7 +135,7 @@
         </section>
     </header>
 
-    <main>
+    <main class="w-4/5 mx-auto">
         <section>
             <div>
                 <h2 class="text-2xl lg:text-5xl text-[#12132D] font-extrabold text-center">Let’s Discuss</h2>
@@ -149,7 +149,7 @@
                 <div class="card w-full lg:w-2/3  bg-[#F3F3F5] shadow-xl">
                     <div class="gap-x-10 p-4 lg:p-10 flex flex-col lg:flex-row ">
                         <div class="indicator ">
-                            <span class="indicator-item badge bg-green-600"></span>
+                            <span class="indicator-item badge bg-green-500"></span>
                             <div class="grid w-32 h-32 bg-white  place-items-center">
                                 <img src="images/flag.png" alt="">
                             </div>
@@ -167,18 +167,24 @@
                                     costume mishap because, hey that’s
                                     your prerogative</p>
                             </div>
-                            <div class="flex justify-start  items-center space-x-10">
-                                <div class="space-x-3">
-                                    <i class="fa-regular fa-envelope"></i>
-                                    <span> 300</span>
+                            <div class="flex justify-between items-center">
+                                <div class="flex justify-start  items-center space-x-10">
+                                    <div class="space-x-3">
+                                        <i class="fa-regular fa-envelope"></i>
+                                        <span> 300</span>
+                                    </div>
+                                    <div class="space-x-3">
+                                        <i class="fa-regular fa-eye"></i>
+                                        <span> 200</span>
+                                    </div>
+                                    <div class="space-x-3">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <span> 100</span>
+                                    </div>
                                 </div>
-                                <div class="space-x-3">
-                                    <i class="fa-regular fa-eye"></i>
-                                    <span> 200</span>
-                                </div>
-                                <div class="space-x-3">
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span> 100</span>
+
+                                <div class="flex justify-center items-center">
+                                    <button class=" bg-green-500 rounded-full hover:bg-green-200 w-[28px] h-[28px]"><i class="fa-regular fa-envelope"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -374,6 +380,23 @@
         </section>
     </main>
 
+    <!-- footer section  -->
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <h2 class="text-5xl text-black font-extrabold">ReTro</h2>
+        <p >Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+        <nav >
+          <div class="grid grid-flow-col gap-5">
+            <button class="btn bg-slate-300"><a><i class="fa-brands fa-twitter"></i></a></button>
+            <button class="btn bg-slate-300"><a><i class="fa-brands fa-facebook"></i></a></a></button>
+            <button class="btn bg-slate-300"><a><i class="fa-brands fa-square-instagram"></i></a></button>
+            <button class="btn bg-slate-300"><a><i class="fa-brands fa-github"></i></a></button>
+          </div>
+        </nav> 
+        
+        <aside class="border-t-2 border-gray-200 w-full p-10">
+          <p>2017, All Rights Reserved.</p>
+        </aside>
+      </footer>
 
     <script src="js/retro.js"></script>
 </body>
