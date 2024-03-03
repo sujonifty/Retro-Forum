@@ -108,7 +108,7 @@ const getLatestPosts = async () => {
             <div class="space-y-5">
                     <div class="space-x-3 text-left">
                         <i class="fa-regular fa-calendar"></i>
-                        <span>${newPost?.author?.posted_date}</span>
+                        <span>${newPost.author?.posted_date?newPost.author?.posted_date:"No published date"}</span>
                     </div>
                 
                 <div class="pb-2">
@@ -122,7 +122,7 @@ const getLatestPosts = async () => {
                     </div>
                     <div>
                         <p class=" font-bold">${newPost?.author?.name}</p>
-                        <p>${newPost?.author?.designation}</p>
+                        <p>${newPost.author?.designation?newPost.author?.designation:"Unknown"}</p>
                     </div>
                 </div>
             </div>
