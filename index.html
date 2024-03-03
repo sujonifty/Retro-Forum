@@ -39,8 +39,8 @@
     </style>
 </head>
 
-<body class="container inter">
-    <header class="w-4/5 mx-auto">
+<body class="container mulish ">
+    <header class="w-4/5 mx-auto ">
         <!-- navbar section  -->
         <nav>
             <div class="navbar bg-base-100">
@@ -89,17 +89,14 @@
         <!-- banner section  -->
 
         <section class="my-16 mx-auto">
-            <div class="lg:hero lg:p-10 rounded-3xl  bg-[#12132D] mx-auto p-5">
+            <!-- <div class="lg:hero bg-[url('/images/bgbanner.png')] lg:p-10 rounded-3xl  mx-auto p-5">
                 <div class=" mx-auto hero-content flex-col  space-y-5 lg:w-full lg:flex-row">
                     <div class="flex mx-auto flex-col mb-5">
                         <div class=" text-center lg:text-left  lg:p-10">
                             <h3 class="  text-xl lg:text-5xl font-extrabold text-white lg:leading-[72px]">Welcome to the
                                 <br> <span class=" text-[#797DFC] ">ReTro</span> Forum
                             </h3>
-                            <p class=" lg:text-[1.25rem] text-[#FFFFFFCC] lg:w-2/3 font-medium my-5 ">Share your
-                                favorite opinion
-                                and
-                                win and wp forum coffee mug!</p>
+                            <p class=" lg:text-[1.25rem] text-[#FFFFFFCC] lg:w-2/3 font-medium my-5 ">Step into our vibrant and entertaining forum where laughter is the currency, and discussions are a rollercoaster of fun! Get ready for a journey of joy and entertainment in our lively forum!</p>
                             <div class=" lg:w-1/2">
                                 <label id="" class="   input input-bordered flex justify-end pr-0 ">
                                     <input id="search-field" type="text" class="grow w-4" placeholder="search..." />
@@ -132,7 +129,50 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+            <div class="hero min-h-screen" style="background-image:url('/images/bgbanner.png');">
+                <div class="hero-overlay bg-opacity-100"></div>
+                <div class=" mx-auto hero-content flex-col  space-y-5 lg:w-full lg:flex-row">
+                    <div class="flex mx-auto flex-col mb-5">
+                        <div class=" text-center lg:text-left  lg:p-10">
+                            <h3 class="  text-xl lg:text-5xl font-extrabold text-white lg:leading-[72px]">Welcome to the
+                                <br> <span class=" text-[#797DFC] ">ReTro</span> Forum
+                            </h3>
+                            <p class=" lg:text-[1.25rem] text-[#FFFFFFCC] lg:w-2/3 font-medium my-5 ">Step into our vibrant and entertaining forum where laughter is the currency, and discussions are a rollercoaster of fun! Get ready for a journey of joy and entertainment in our lively forum!</p>
+                            <div class=" lg:w-1/2">
+                                <label id="" class="   input input-bordered flex justify-end pr-0 ">
+                                    <input id="search-field" type="text" class="grow w-4" placeholder="search..." />
+                                    <button onclick="getSearchPosts()"
+                                        class="btn bg-blue-400 text-white font-bold">Search</button>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card shrink-0 lg:w-full max-w-sm shadow-2xl bg-base-100">
+                        <div class="space-y-5 lg:space-y-10 p-3 lg:p-12">
+                            <div class="flex justify-between items-center">
+                                <p>Registered Users</p>
+                                <p>01</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <p>forum</p>
+                                <p>05</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <p>Topics</p>
+                                <p>01</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <p>Replies</p>
+                                <p>01</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
         </section>
     </header>
 
@@ -140,7 +180,7 @@
         <section>
             <div>
                 <h2 class="text-2xl lg:text-5xl text-[#12132D] font-extrabold text-center">Let’s Discuss</h2>
-                <p class="text-[18px] text-[#12132D99] lg:w-2/3 p-4 mx-auto text text-justify lg:text-center">Yes, you
+                <p class="text-[18px] text-[#12132D99] inter lg:w-2/3 p-4 mx-auto text text-justify lg:text-center">Yes, you
                     can
                     run unit tests and view the results directly within the app. The integrated testing features allow
                     for a streamlined .</p>
@@ -163,7 +203,7 @@
                             <h2>Title</h2>
                             <div class="flex">
                                 <img src="images/mark.png" alt="">
-                                <p>Mark as read <span>(1)</span></p>
+                                <p>Mark as read (<span id="count-field">0</span>)</p>
                             </div>
                         </div>
 
@@ -179,7 +219,7 @@
                     <img src="images/joinforum.png" />
                     <div>
                         <h1 class="text-5xl text-white font-extrabold">Join Our Forum</h1>
-                        <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!
+                        <p class="py-6 text-[#FFFFFFCC] inter">Share your favorite opinion and win and wp forum coffee mug!
                             Yes, you can run unit tests and view the results directly within the app. </p>
                         <button class="btn bg-blue-400">Registered Now</button>
                     </div>
@@ -191,7 +231,7 @@
         <section>
             <div>
                 <h2 class="text-lg lg:text-5xl text-[#12132D] font-extrabold text-center">Latest posts</h2>
-                <p class=" text-[#12132D99] lg:w-2/3 p-4 mx-auto text text-justify lg:text-center">Yes, you
+                <p class=" text-[#12132D99] lg:w-2/3 p-4 mx-auto inter text text-justify lg:text-center">Yes, you
                     can
                     run unit tests and view the results directly within the app. The integrated testing features allow
                     for a streamlined .</p>
