@@ -53,8 +53,9 @@ const getAllPosts = async (item) => {
                 </div>
         `
         postContainer.appendChild(div);
-
-        setTimeout(loadingSpinner(false), 5000);
+        
+        loadingSpinner(false);
+        
     });
 }
 
