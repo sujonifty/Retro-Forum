@@ -6,57 +6,59 @@ const getAllPosts = async (item) => {
     const allPosts = data.posts;
     const postContainer = document.getElementById('post-container');
     postContainer.innerHTML = '';
-    allPosts?.forEach(post => {
-        loadingSpinner(true);
-        const div = document.createElement('div');
-        div.innerHTML = `
-        <div class="card lg:w-5/6 mx-auto bg-[#F3F3F5] shadow-xl">
-                    <div class="gap-x-10 p-4 lg:p-10 flex flex-col lg:flex-row ">
-                        <div class="indicator ">
-                            <span id="active-icon" class="indicator-item badge ${post.isActive?'bg-green-500':'bg-red-500'}"></span>
-                            <div class="grid w-32 h-32 bg-white mb-3   place-items-center">
-                                <img class="rounded-3xl" src="${post?.image}" alt="author-image">
-                            </div>
-                        </div>
-
-                        <div class="space-y-5">
-                            <div class="flex gap-5">
-                                <p>#${post?.category}</p>
-                                <p>Author:${post?.author?.name}</p>
-                            </div>
-                            <div class="border-b-gray-400 border-dashed border-b-2 pb-2">
-                                <p class="text-[20px] text-[#12132D] font-bold text-left">${post?.title}</p>
-                                <p class="text-justify inter lg:text-left">${post?.description}</p>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <div class="flex justify-start  items-center space-x-10">
-                                    <div class="lg:space-x-3">
-                                        <i class="fa-regular fa-envelope"></i>
-                                        <span> ${post?.comment_count}</span>
-                                    </div>
-                                    <div class="lg:space-x-3">
-                                        <i class="fa-regular fa-eye"></i>
-                                        <span> ${post?.view_count}</span>
-                                    </div>
-                                    <div class="lg:space-x-3">
-                                        <i class="fa-regular fa-clock"></i>
-                                        <span> ${post?.posted_time}</span>
-                                    </div>
+    loadingSpinner(true);
+    setTimeout(()=>{
+        allPosts?.forEach(post => {
+        
+            const div = document.createElement('div');
+            div.innerHTML = `
+            <div class="card lg:w-5/6 mx-auto bg-[#F3F3F5] shadow-xl">
+                        <div class="gap-x-10 p-4 lg:p-10 flex flex-col lg:flex-row ">
+                            <div class="indicator ">
+                                <span id="active-icon" class="indicator-item badge ${post.isActive?'bg-green-500':'bg-red-500'}"></span>
+                                <div class="grid w-32 h-32 bg-white mb-3   place-items-center">
+                                    <img class="rounded-3xl" src="${post?.image}" alt="author-image">
                                 </div>
-
-                                <div class="flex justify-center items-center">
-                                    <button onclick="markBtn('${post.title.replace(/'/g,"")}','${post.view_count}')" class=" markBtn bg-green-500 rounded-full hover:bg-green-200 w-[28px] h-[28px]"><i class="fa-regular fa-envelope-open"></i></button>
+                            </div>
+    
+                            <div class="space-y-5">
+                                <div class="flex gap-5">
+                                    <p>#${post?.category}</p>
+                                    <p>Author:${post?.author?.name}</p>
+                                </div>
+                                <div class="border-b-gray-400 border-dashed border-b-2 pb-2">
+                                    <p class="text-[20px] text-[#12132D] font-bold text-left">${post?.title}</p>
+                                    <p class="text-justify inter lg:text-left">${post?.description}</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div class="flex justify-start  items-center space-x-10">
+                                        <div class="lg:space-x-3">
+                                            <i class="fa-regular fa-envelope"></i>
+                                            <span> ${post?.comment_count}</span>
+                                        </div>
+                                        <div class="lg:space-x-3">
+                                            <i class="fa-regular fa-eye"></i>
+                                            <span> ${post?.view_count}</span>
+                                        </div>
+                                        <div class="lg:space-x-3">
+                                            <i class="fa-regular fa-clock"></i>
+                                            <span> ${post?.posted_time}</span>
+                                        </div>
+                                    </div>
+    
+                                    <div class="flex justify-center items-center">
+                                        <button onclick="markBtn('${post.title.replace(/'/g,"")}','${post.view_count}')" class=" markBtn bg-green-500 rounded-full hover:bg-green-200 w-[28px] h-[28px]"><i class="fa-regular fa-envelope-open"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        `
-        postContainer.appendChild(div);
-        
-        loadingSpinner(false);
-        
-    });
+            `
+            postContainer.appendChild(div);
+            loadingSpinner(false);
+            
+        });
+    },2000)
 }
 
 /// Mark as read section
@@ -93,7 +95,7 @@ const getLatestPosts = async () => {
         // console.log(newPost);
         const latestPostContainer = document.getElementById('latest-post');
         const latestDivContainer = document.createElement('div');
-        latestDivContainer.classList = 'card lg:w-96 bg-base-100 shadow-xl my-5';
+        latestDivContainer.classList = 'card  bg-base-100 shadow-xl my-5';
         latestDivContainer.innerHTML = `
             <figure class="px-10 pt-10 ">
             <img src="${newPost.cover_image}" alt="cover-image"
@@ -155,9 +157,7 @@ const loadingSpinner = (isSpinner) => {
         showSpinner.classList.remove('hidden');
     }
     else {
-        setTimeout(()=>{
-            showSpinner.classList.add('hidden');
-        },2000);
+        showSpinner.classList.add('hidden');
     }
 }
 
