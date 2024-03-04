@@ -4,17 +4,17 @@ const getAllPosts = async (item) => {
     const response = await fetch(url);
     const data = await response.json();
     const allPosts = data.posts;
-    console.log(allPosts)
+    // console.log(allPosts)
     const postContainer = document.getElementById('post-container');
     postContainer.innerHTML = '';
     allPosts?.forEach(post => {
-
+        loadingSpinner(true);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card w-full  bg-[#F3F3F5] shadow-xl">
                     <div class="gap-x-10 p-4 lg:p-10 flex flex-col lg:flex-row ">
                         <div class="indicator ">
-                            <span id="active-icon" class="indicator-item badge ${post.isActive?'green':'red'}"></span>
+                            <span id="active-icon" class="indicator-item badge ${post.isActive?'bg-green-500':'bg-red-500'}"></span>
                             <div class="grid w-32 h-32 bg-white mb-3  place-items-center">
                                 <img src="${post?.image}" alt="author-image">
                             </div>
@@ -55,12 +55,7 @@ const getAllPosts = async (item) => {
         `
         postContainer.appendChild(div);
 
-        // checked active status 
-        // if (post.isActive != 'true') {
-        //     const activeIcon = document.getElementById('active-icon');
-        //     activeIcon.classList.remove('bg-green-500');
-        //     activeIcon.classList.add('bg-red-500');
-        // }
+        setTimeout(loadingSpinner(false), 5000);
     });
 }
 
