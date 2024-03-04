@@ -45,7 +45,7 @@ const getAllPosts = async (item) => {
                                 </div>
 
                                 <div class="flex justify-center items-center">
-                                    <button onclick="markBtn('${post.title}','${post.view_count}')" class=" markBtn bg-green-500 rounded-full hover:bg-green-200 w-[28px] h-[28px]"><i class="fa-regular fa-envelope-open"></i></button>
+                                    <button onclick="markBtn('${post.title.replace(/'/g,"")}','${post.view_count}')" class=" markBtn bg-green-500 rounded-full hover:bg-green-200 w-[28px] h-[28px]"><i class="fa-regular fa-envelope-open"></i></button>
                                 </div>
                             </div>
                         </div>
