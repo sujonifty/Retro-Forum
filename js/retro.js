@@ -4,14 +4,13 @@ const getAllPosts = async (item) => {
     const response = await fetch(url);
     const data = await response.json();
     const allPosts = data.posts;
-    // console.log(allPosts)
     const postContainer = document.getElementById('post-container');
     postContainer.innerHTML = '';
     allPosts?.forEach(post => {
         loadingSpinner(true);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card w-full  bg-[#F3F3F5] shadow-xl">
+        <div class="card w-5/6 mx-auto bg-[#F3F3F5] shadow-xl">
                     <div class="gap-x-10 p-4 lg:p-10 flex flex-col lg:flex-row ">
                         <div class="indicator ">
                             <span id="active-icon" class="indicator-item badge ${post.isActive?'bg-green-500':'bg-red-500'}"></span>
