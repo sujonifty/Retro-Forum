@@ -10,12 +10,12 @@ const getAllPosts = async (item) => {
         loadingSpinner(true);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card w-5/6 mx-auto bg-[#F3F3F5] shadow-xl">
+        <div class="card lg:w-5/6 mx-auto bg-[#F3F3F5] shadow-xl">
                     <div class="gap-x-10 p-4 lg:p-10 flex flex-col lg:flex-row ">
                         <div class="indicator ">
                             <span id="active-icon" class="indicator-item badge ${post.isActive?'bg-green-500':'bg-red-500'}"></span>
-                            <div class="grid w-32 h-32 bg-white mb-3  place-items-center">
-                                <img src="${post?.image}" alt="author-image">
+                            <div class="grid w-32 h-32 bg-white mb-3   place-items-center">
+                                <img class="rounded-3xl" src="${post?.image}" alt="author-image">
                             </div>
                         </div>
 
@@ -30,15 +30,15 @@ const getAllPosts = async (item) => {
                             </div>
                             <div class="flex justify-between items-center">
                                 <div class="flex justify-start  items-center space-x-10">
-                                    <div class="space-x-3">
+                                    <div class="lg:space-x-3">
                                         <i class="fa-regular fa-envelope"></i>
                                         <span> ${post?.comment_count}</span>
                                     </div>
-                                    <div class="space-x-3">
+                                    <div class="lg:space-x-3">
                                         <i class="fa-regular fa-eye"></i>
                                         <span> ${post?.view_count}</span>
                                     </div>
-                                    <div class="space-x-3">
+                                    <div class="lg:space-x-3">
                                         <i class="fa-regular fa-clock"></i>
                                         <span> ${post?.posted_time}</span>
                                     </div>
@@ -94,7 +94,7 @@ const getLatestPosts = async () => {
         const latestDivContainer = document.createElement('div');
         latestDivContainer.classList = 'card lg:w-96 bg-base-100 shadow-xl my-5';
         latestDivContainer.innerHTML = `
-            <figure class="px-10 pt-10">
+            <figure class="px-10 pt-10 ">
             <img src="${newPost.cover_image}" alt="cover-image"
                 class="rounded-xl" />
         </figure>
@@ -111,9 +111,11 @@ const getLatestPosts = async () => {
                 </div>
                 <div class="flex  justify-start  items-center space-x-10">
 
-                    <div class=" w-[44px] h-[44px] rounded-[100%]">
-                        <img class="w-full" src="${newPost?.profile_image}" alt="">
+                    <div class=" w-[44px] h-[44px] ">
+                        <img class="w-full rounded-full" src="${newPost?.profile_image}" alt="">
                     </div>
+                    
+                    
                     <div>
                         <p class=" font-bold">${newPost?.author?.name}</p>
                         <p>${newPost.author?.designation?newPost.author?.designation:"Unknown"}</p>
@@ -152,7 +154,9 @@ const loadingSpinner = (isSpinner) => {
         showSpinner.classList.remove('hidden');
     }
     else {
-        showSpinner.classList.add('hidden');
+        setTimeout(()=>{
+            showSpinner.classList.add('hidden');
+        },2000);
     }
 }
 
